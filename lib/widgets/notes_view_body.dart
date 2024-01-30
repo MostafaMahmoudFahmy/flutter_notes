@@ -12,12 +12,25 @@ class NotesViewBody extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 50),
         child: Column(
-          children: [
-            CustomAbbBar(),
-            NoteItem(),
-          ],
+          children: [CustomAbbBar(), Expanded(child: NotesItemList())],
         ),
       ),
     );
+  }
+}
+
+class NotesItemList extends StatelessWidget {
+  const NotesItemList({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+        itemCount: 10,
+        itemBuilder: (context, index) {
+          return const Padding(
+            padding: EdgeInsets.symmetric(vertical: 4),
+            child: NoteItem(),
+          );
+        });
   }
 }
