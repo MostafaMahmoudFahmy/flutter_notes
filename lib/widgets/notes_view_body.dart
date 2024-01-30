@@ -10,7 +10,7 @@ class NotesViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 50),
+        padding: EdgeInsets.only(right: 16, left: 16, top: 24),
         child: Column(
           children: [CustomAbbBar(), Expanded(child: NotesItemList())],
         ),
