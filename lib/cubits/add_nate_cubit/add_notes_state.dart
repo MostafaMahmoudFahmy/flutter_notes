@@ -4,11 +4,7 @@ class AddNotesInitial extends AddNotesState {}
 
 class AddNotesLoading extends AddNotesState {}
 
-class AddNotesSuccess extends AddNotesState {
-  final String successMessage;
-
-  AddNotesSuccess(this.successMessage);
-}
+class AddNotesSuccess extends AddNotesState {}
 
 class AddNotesFailure extends AddNotesState {
   final String errorMessage;
