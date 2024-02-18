@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, this.color, required this.onPressed});
+  const CustomButton(
+      {super.key, this.color, required this.onPressed, this.isloading = false});
   final Color? color;
   final void Function()? onPressed;
+  final bool isloading;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -18,10 +20,18 @@ class CustomButton extends StatelessWidget {
           ),
         ),
         onPressed: onPressed,
-        child: const Text(
-          "Add",
-          style: TextStyle(color: Colors.black),
-        ),
+        child: isloading
+            ? const SizedBox(
+                height: 24,
+                width: 24,
+                child: CircularProgressIndicator(
+                  color: Colors.black,
+                ),
+              )
+            : const Text(
+                "Add",
+                style: TextStyle(color: Colors.black),
+              ),
       ),
     );
   }

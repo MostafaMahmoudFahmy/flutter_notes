@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/add_nate_cubit/add_notes_cubit.dart';
+import 'package:notes_app/cubits/add_nate_cubit/add_notes_state.dart';
 import 'package:notes_app/model/note_model.dart';
 
 import '../const_file.dart';
@@ -45,7 +46,9 @@ class _AddNoteFormState extends State<AddNoteForm> {
           const SizedBox(
             height: 80,
           ),
-          CustomButton(
+          BlocBuilder<AddNotesCubit, AddNotesState>(
+            builder: (context, state) => CustomButton(
+              isloading: state is AddNotesLoading ? true : false,
               color: kPrimaryColor,
               onPressed: () {
                 if (formKey.currentState!.validate()) {
@@ -61,7 +64,9 @@ class _AddNoteFormState extends State<AddNoteForm> {
                   autovalidateMode = AutovalidateMode.always;
                 }
                 setState(() {});
-              }),
+              },
+            ),
+          ),
         ],
       ),
     );
