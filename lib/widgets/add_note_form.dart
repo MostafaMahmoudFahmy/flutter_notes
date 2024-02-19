@@ -29,6 +29,9 @@ class _AddNoteFormState extends State<AddNoteForm> {
       autovalidateMode: autovalidateMode,
       child: Column(
         children: [
+          const SizedBox(
+            height: 16,
+          ),
           CustomTextField(
               hintTxt: "Title",
               onSaved: (value) {
@@ -66,6 +69,9 @@ class _AddNoteFormState extends State<AddNoteForm> {
                 setState(() {});
               },
             ),
+          ),
+          const SizedBox(
+            height: 16,
           ),
         ],
       ),
