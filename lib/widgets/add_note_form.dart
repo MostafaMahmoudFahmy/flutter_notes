@@ -6,6 +6,7 @@ import 'package:notes_app/model/note_model.dart';
 
 import '../const_file.dart';
 import 'custom_button.dart';
+import 'custom_color_list.dart';
 import 'custom_text_field.dart';
 import 'package:intl/intl.dart';
 
@@ -48,7 +49,11 @@ class _AddNoteFormState extends State<AddNoteForm> {
                 subtitle = value;
               }),
           const SizedBox(
-            height: 80,
+            height: 32,
+          ),
+          const ColorListView(),
+          const SizedBox(
+            height: 32,
           ),
           BlocBuilder<AddNotesCubit, AddNotesState>(
             builder: (context, state) => CustomButton(
