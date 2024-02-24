@@ -5,6 +5,7 @@ import 'package:notes_app/widgets/custom_app_bar.dart';
 import 'package:notes_app/widgets/custom_text_field.dart';
 
 import '../model/note_model.dart';
+import '../widgets/edit_colors_list_view.dart';
 
 class EditView extends StatefulWidget {
   const EditView({super.key, required this.note});
@@ -57,6 +58,10 @@ class _EditViewState extends State<EditView> {
                 content = value;
               },
             ),
+            const SizedBox(
+              height: 16,
+            ),
+            EditNoteColorList(note: widget.note),
           ],
         ),
       ),
